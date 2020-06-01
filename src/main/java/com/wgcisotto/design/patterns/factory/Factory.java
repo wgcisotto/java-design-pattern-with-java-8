@@ -1,4 +1,6 @@
-package com.wgcisotto.design.patterns.function;
+package com.wgcisotto.design.patterns.factory;
+
+import com.wgcisotto.design.patterns.function.Function;
 
 import java.util.List;
 import java.util.function.Supplier;

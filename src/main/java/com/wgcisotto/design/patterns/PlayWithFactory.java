@@ -1,6 +1,6 @@
 package com.wgcisotto.design.patterns;
 
-import com.wgcisotto.design.patterns.function.Factory;
+import com.wgcisotto.design.patterns.factory.Factory;
 import com.wgcisotto.design.patterns.model.Circle;
 
 import java.awt.*;
@@ -13,6 +13,9 @@ public class PlayWithFactory {
         // Using supplier
         Supplier<Circle> factory = () -> new Circle();
         System.out.println(factory.get());
+
+        Factory<Circle> otherFactory = Circle::new;
+        System.out.println(otherFactory.newInstance());
 
         Factory<Circle> circleFctory = Factory.createFactory(Circle::new, Color.RED);
         //Factory<Circle> circleFctory2 = Factory.createFactory(Circle::new);
