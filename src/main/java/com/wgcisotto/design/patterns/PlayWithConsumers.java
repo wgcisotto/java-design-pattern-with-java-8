@@ -2,6 +2,8 @@ package com.wgcisotto.design.patterns;
 
 import com.wgcisotto.design.patterns.function.Consumer;
 
+import java.util.function.BiConsumer;
+
 public class PlayWithConsumers {
 
     public static void main(String[] args) {
@@ -12,6 +14,10 @@ public class PlayWithConsumers {
         Consumer<String> s3 = s1.andThen(s2);
 
         s3.accept("William");
+
+        BiConsumer biConsumer = (sA, sB) -> System.out.println(sA + " " + sB);
+
+        biConsumer.accept("Oi", "William");
     }
 
 }
