@@ -4,6 +4,9 @@ import com.wgcisotto.design.patterns.function.Comparator;
 import com.wgcisotto.design.patterns.function.Function;
 import com.wgcisotto.design.patterns.model.Person;
 
+import java.util.Arrays;
+import java.util.List;
+
 public class PlayWithComparators {
 
     public static void main(String[] args) {
@@ -13,6 +16,12 @@ public class PlayWithComparators {
         Person linda = new Person("Linda", 26);
         Person james = new Person("James", 32);
         Person jamesBis = new Person("James", 26);
+
+        List<Person> people = Arrays.asList(mary, john, linda, james, jamesBis);
+
+        people.sort((java.util.Comparator.comparing(Person::getName).thenComparing(Person::getAge)));
+
+        people.forEach(System.out::println);
 
         Function<Person, String> getName = Person::getName;
         Function<Person, Integer> getAge = Person::getAge;
