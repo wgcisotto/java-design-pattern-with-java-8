@@ -19,7 +19,9 @@ public class PlayWithComparators {
 
         List<Person> people = Arrays.asList(mary, john, linda, james, jamesBis);
 
-        people.sort((java.util.Comparator.comparing(Person::getName).thenComparing(Person::getAge)));
+        people.sort((java.util.Comparator
+                .comparing(Person::getName)
+                .thenComparing(Person::getAge)));
 
         people.forEach(System.out::println);
 
